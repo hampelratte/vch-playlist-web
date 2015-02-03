@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iPOJO>
+	<instance component="de.berlios.vch.playlist.web.Activator" name="vch.web.playlist" />
+	<instance component="de.berlios.vch.playlist.web.PlaylistServlet" name="vch.web.playlist.servlet" />
+    <instance component="de.berlios.vch.playlist.web.PlaylistAddAction" name="vch.web.playlist.action.add" />
+</iPOJO>
