@@ -25,7 +25,6 @@ public class PlaylistAddAction implements IWebAction {
      * the playlist service is unavailable, the playlist servlet is invalid / unavailable and this action gets an 404.
      * that's why we have this requirement
      */
-    @SuppressWarnings("unused")
     @Requires
     private PlaylistService playlistService;
 
