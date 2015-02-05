@@ -63,7 +63,7 @@ public class PlaylistServlet extends VchHttpServlet {
 
     private BundleContext ctx;
 
-    private ServiceRegistration menuReg;
+    private ServiceRegistration<IWebMenuEntry> menuReg;
 
     public PlaylistServlet(BundleContext ctx) {
         this.ctx = ctx;
@@ -153,9 +153,7 @@ public class PlaylistServlet extends VchHttpServlet {
             resp.getWriter().print("[");
             for (Iterator<PlaylistEntry> iterator = pl.iterator(); iterator.hasNext();) {
                 PlaylistEntry entry = iterator.next();
-                resp.getWriter().print(
-                        "{\"id\":\"" + entry.getId() + "\",\"title\":\""
-                                + entry.getVideo().getTitle().replaceAll("\"", "\\\\\"") + "\"}");
+                resp.getWriter().print("{\"id\":\"" + entry.getId() + "\",\"title\":\"" + entry.getVideo().getTitle().replaceAll("\"", "\\\\\"") + "\"}");
                 if (iterator.hasNext()) {
                     resp.getWriter().print(",");
                 }
@@ -221,7 +219,7 @@ public class PlaylistServlet extends VchHttpServlet {
         entry.setLinkUri(PlaylistServlet.PATH);
         childs.add(entry);
         menu.setChilds(childs);
-        menuReg = ctx.registerService(IWebMenuEntry.class.getName(), menu, null);
+        menuReg = ctx.registerService(IWebMenuEntry.class, menu, null);
     }
 
     @Invalidate
