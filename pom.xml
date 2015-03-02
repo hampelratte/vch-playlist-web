@@ -5,6 +5,7 @@
     <packaging>bundle</packaging>
     <name>VCH Playlist Web Interface</name>
     <version>1.1.1-SNAPSHOT</version>
+    <description>Manage playlists in the web interface.</description>
 
     <parent>
         <artifactId>parent</artifactId>
@@ -13,7 +14,12 @@
         <relativePath>../vch-parent/pom.xml</relativePath>
     </parent>
 
-    <description>Manage playlists in the web interface.</description>
+    <scm>
+        <connection>scm:git:git@github.com/hampelratte/vch-playlist-web.git</connection>
+        <developerConnection>scm:git:git@github.com:hampelratte/vch-playlist-web.git</developerConnection>
+        <url>https://github.com/hampelratte/vch-playlist-web.git</url>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>de.berlios.vch</groupId>
